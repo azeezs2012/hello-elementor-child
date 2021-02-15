@@ -46,7 +46,7 @@ button.loading#analyze-website .elementor-button-text{
 	display: flex;
 	justify-content: center;
 	padding: 0;
-	max-width: 600px;
+	max-width: 400px;
     margin: 0 auto;
 }*/
 .result .stats {
@@ -58,7 +58,8 @@ button.loading#analyze-website .elementor-button-text{
 	margin: 0 auto;
 }
 a.stat-get-start {
-	font-size: 14px;
+    font-size: 14px;
+    font-weight: 700;
     background: linear-gradient(60deg, #FF7500 15%, #FFB503);
     color: #fff;
     padding: 7px 20px;
@@ -150,7 +151,7 @@ img.analyze-logo {
 
 .modal-analyze-content h4 {
     font-family: "Nunito Sans", Helvetica;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 30px;
     letter-spacing: 1px;
     padding: 15px 0;
@@ -180,14 +181,17 @@ p.status-text {
 	font-weight: 700;
 	font-size: 75px;
 	color: #674399;
-	line-height: 1.15em;
+    line-height: 1.15em;
+    letter-spacing: 0.5px;
+    
 }
 .stats-url {
     font-size: 16px;
     margin-bottom: 10px !important;
     border-radius: 5px;
-    color: #1d1d1d;
+    color: #000;
     padding: 5px;
+    font-weight: 400;
 }
 .result span.stat-text {
 	font-size: 18px;
@@ -195,7 +199,7 @@ p.status-text {
 	line-height: 1em;
 	color: #1d1d1d;
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 700;
 	margin-top: 30px;
 	letter-spacing: 0.5px;
 }
@@ -210,8 +214,9 @@ p.status-text {
 
 p.text {
     margin-bottom: 5px;
-	font-family: "Nunito Sans",Helvetica;
-	color: #1d1d1d;
+    color: #1d1d1d;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 input#email::placeholder {
@@ -224,9 +229,9 @@ input#email::placeholder {
 img.arrow-line {
     position: absolute;
     width: 50px;
-    right: -32px;
-    bottom: -28px;
-    transform: rotate(-20deg);
+    right: -40px;
+    bottom: -25px;
+    transform: rotate(-22deg);
 }
 .close-modal {
     font-size: 14px;
@@ -241,7 +246,6 @@ img.arrow-line {
     border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
-    font-family: "Nunito Sans",Helvetica;
     color: #fff;
     display: block;
 }
@@ -400,7 +404,7 @@ img.arrow-line {
 
 .toggle-carousel-images .stats .stats-item .value{
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .toggle-carousel-images .stats .stats-item .text{
@@ -480,7 +484,7 @@ input:checked + .slider:before {
   line-height: 34px; 
   text-transform: uppercase;
   color: black;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 
@@ -619,7 +623,7 @@ span.status-before.active + label span.slider::before {
     background-color: #ca5656;
 }
 .test-site-result .test-resuts .result-stats .result-stat span.value{
-	font-weight: 800;
+	font-weight: 700;
     font-size: 38px;
     line-height: 1.2;
 }
@@ -663,6 +667,9 @@ span.status-before.active + label span.slider::before {
     .test-site-result .test-resuts .result-stats .result-stat span.label {
         font-size: 15px;
         padding-right: 10px;
+    }
+    .modal-wrap .modal.analyze-loading .modal-content {
+        width: 100%;
     }
 }
 
@@ -812,7 +819,7 @@ img.analyze-logo {
 .modal-wrap .stats .content span.title {
     font-size: 11px !important;
     line-height: 24px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     max-width: 84px;
     margin: 0 auto  ;
@@ -845,7 +852,7 @@ img.analyze-logo {
 .modal-wrap .stats .content span.value {
     font-size: 14px;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 400;
 }
 .modal-wrap .stats .content .result-body img:hover {
     box-shadow: none !important;
@@ -860,6 +867,18 @@ img.analyze-logo {
     width: 100%;
     top: 30px;
     left: calc(50% - 11px);
+}
+.modal-wrap a.close-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 6px;
+    line-height: 1;
+    background-color: #000;
+    color: #fff;
+    font-size: 10px;
+    width: 22px;
+    border-radius: 15px;
 }
 
 @media (max-width: 992px){

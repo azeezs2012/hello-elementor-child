@@ -155,9 +155,14 @@
                 {
                     if(xhr.responseJSON.errors && xhr.responseJSON.errors.length){
                         var error = xhr.responseJSON.errors[0];
+                        if(error.detail.toString().includes('403')){
+                            $('.loading-spinner-container .loading-test-text span.loading-title').text('We are blocked from crawling your page!');
+                        }else{
+                            $('.loading-spinner-container .loading-test-text span.loading-title').text('Sorry we could not run RapidLoad on this site!');
+                        }
                         $('.loading-spinner-container').toggleClass('error');
                         //$('.loading-spinner-container .loading-test-text span.loading-title').text('Error : ' + error.code);
-                        $('.loading-spinner-container .loading-test-text span.loading-title').text('Sorry we could not run UnusedCSS on this site!');
+                        
                         $('.loading-spinner-container .loading-test-text span.almost-done').text('Results not found');
                         /*setTimeout(function(){
                             $('.test-site-content.test-site-form').toggleClass('show');
@@ -221,7 +226,7 @@
                     var output_result = '<div class="test-resuts">';
                     output_result +=        '<span class="result-close-btn">X</span>';
                     output_result +=        '<div class="result-image">';
-                    output_result +=            '<div class="image"><img src="//image.thum.io/get/width/600/crop/600/';
+                    output_result +=            '<div class="image"><img src="//image.thum.io/get/auth/14534-rapidload-analyzer/width/600/crop/600/';
                     output_result +=                $url.val();
                     output_result +=                '" alt=""></div>';
                     output_result +=            '<div class="site-url"><span class="site-url">';
@@ -421,5 +426,5 @@
         } ); 
     });    
 
-    console.log('landing version 1.16');
+    console.log('landing page version 1.16');
 })(jQuery);

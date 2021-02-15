@@ -37,11 +37,13 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
         }
         ?>
     </div>
-    <p><strong>Hello,</strong></p>
+    <p><strong>Hello, <?php echo $order->get_billing_first_name() ?></strong></p>
     <p style="margin-bottom: 30px;">
-        Congratulations for creating an account on UnusedCSS<br>
-        You have now access to the app
+        Congratulations on your new account and welcome to the <br>
+        RapidLoad family!
     </p>
+
+    <p style="margin-bottom: 30px;">You now have access to the plugin.</p>
 
     <p>
         Your Username (the email you used) <br>
@@ -82,7 +84,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
             <tbody>
             <tr class="order_item">
                 <td class="td" style="word-wrap: break-word;">
-                    UnusedCSS <?php echo $order->get_meta('plan_nickname') ?> - <?php echo get_woocommerce_currency_symbol() . number_format(($order->get_meta('plan_amount') / 100),2,'.',',') ?>/<?php echo $order->get_meta('plan_interval') ?><br>
+                    RapidLoad <?php echo $order->get_meta('plan_nickname') ?> - <?php echo get_woocommerce_currency_symbol() . number_format(($order->get_meta('plan_amount') / 100),2,'.',',') ?>/<?php echo $order->get_meta('plan_interval') ?><br>
                     <?php echo $order->get_meta('plan_quota') ?> Sites
                 </td>
                 <td class="td" style="text-align:right;">

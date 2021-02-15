@@ -105,10 +105,10 @@
             timer = setInterval(interval_timer, 500);
         },1500);
 
-        $('.modal.analyze-loading .modal-content img.screen-snap-shot').attr('src', "//image.thum.io/get/width/600/crop/800/" + $url.val());
+        $('.modal.analyze-loading .modal-content img.screen-snap-shot').attr('src', "//image.thum.io/get/auth/14534-rapidload-analyzer/width/600/crop/800/" + $url.val());
 
         $.ajax({
-            "url": "https://app.unusedcss.io/api/v1/preview",
+            "url": "https://app.rapidload.io/api/v1/preview",
             "headers" :{
                 'Authorization' : "Bearer 0f4697bdc3394947ba29603971cbe1fd",
             },
@@ -118,10 +118,22 @@
             },
             error: function(xhr, status, error)
             {
+                if(xhr.responseJSON.errors.length) {
+                    var error = xhr.responseJSON.errors[0];
+                    if(error.detail.toString().includes('403')){
+                        $('.modal-result-error').find('p.error-code').text('We are blocked from crawling your page!');
+                    }else{
+                        $('.modal-result-error').find('p.error-code').text('Sorry we could not run UnusedCSS on this site!');
+                        $('.modal-result-error a.close-modal').html('X');
+                        $('.modal-result-error a.close-modal').css('opacity', '60%');
+                        $('.modal-result-content .email a.close-modal').html('X');
+                        $('.modal-result-content .email a.close-modal').css('opacity', '60%');
+                    }
+                }
+                
                 $('form[name="analyze-url-form"] #analyze-website').removeClass('loading');
                 clearInterval(timer);
                 $('.modal-analyze-content').hide();
-                $('.modal-result-error').find('p.error-code').text('Sorry we could not run UnusedCSS on this site!');
                 $('.modal-result-error').toggleClass('error');                
                 $('.modal-result-error').show();
             }
@@ -173,7 +185,10 @@
 
                 if ($('.modal-wrap')[0]){
                     $('.input-wrap').css('display', 'none');
-                    $('.modal-result-content .email p.text').html('Apply this performance enhancement to your wordpress website <a id="priceclass" href="#elementor-element-8b1d408">now</a>');
+                    $('.modal-result-content .email p.text').html('Apply this performance enhancement to your wordpress website <a id="priceclass" href="#pricing">now</a>');
+                    $('.modal-result-error .error-back a.close-modal').html('X');
+                    $('.modal-result-error .error-back a.close-modal').css('opacity', '60%');
+                    $('.modal-result-content .email a.close-modal').html('X');
                     $('.modal-result-content .email a.close-modal').css('opacity', '60%');
                     
                 } else {
@@ -190,7 +205,7 @@
 
     $(document).on("click", "#priceclass", function(){
         var container = jQuery("html,body");
-        var scrollTo = jQuery('.elementor-element-35ea714');
+        var scrollTo = jQuery('.elementor-element-19020cc');
      
         $(container.animate({scrollTop: scrollTo.offset().top, scrollLeft: 0},300)); 
     });
@@ -199,7 +214,7 @@
     var analyze_modal = '<div class="modal analyze-loading">';
         analyze_modal +=        '<div class="modal-content">';
         analyze_modal +=            '<div class="modal-header">';
-        analyze_modal +=                '<img class="analyze-logo" src="https://rapidload.io/wp-content/uploads/2020/11/rapidload.io_-1.svg" alt="">';
+        analyze_modal +=                '<img class="analyze-logo" src="https://rapidload.io/wp-content/uploads/2020/12/rapidload.min_.svg" alt="">';
         analyze_modal +=                '<span></span>';
         analyze_modal +=            '</div>';
         analyze_modal +=            '<div class="modal-analyze-content">';
@@ -228,7 +243,7 @@
         analyze_modal += 	'</div>';
         analyze_modal +=  '</div>';
         analyze_modal +=  '<div class="stats-img-wrap">';
-        analyze_modal +=  '<img src="https://rapidload.io/wp-content/uploads/2020/12/arrow.svg" alt="">';
+        analyze_modal +=  '<img src="https://rapidload.io/wp-content/uploads/2021/01/arrow-min.svg" alt="">';
         analyze_modal +=  '</div>';
         analyze_modal +=  '<div class="stats-figure after stat green">';
         analyze_modal += 	'<span class="title titleafter"></span>';
@@ -251,9 +266,9 @@
         analyze_modal +=                            '<div class="input-wrap">';
         analyze_modal +=                                '<input type="email" name="email" placeholder="Enter your email" id="email">';
         analyze_modal +=                                '<a class="send-email" href="">Send</a>';
-        analyze_modal +=                            '<img class="arrow-line" src="https://rapidload.io/wp-content/uploads/2020/12/drawn-2.svg" alt="">';
+        analyze_modal +=                            '<img class="arrow-line" src="https://rapidload.io/wp-content/uploads/2021/01/drawn-2-min.svg" alt="">';
         analyze_modal +=                            '</div>';
-        analyze_modal +=                            '<p class="text">Enter your email and subscribe with to receive the full stats</p>';
+        analyze_modal +=                            '<p class="text">Enter your email and subscribe to receive detailed site stats & speed optimization tips</p>';
         analyze_modal +=                            '<a class="close-modal" href="#">No Thanks</a>';
         analyze_modal +=                        '</div>';
         analyze_modal +=                    '</div>';
@@ -334,5 +349,5 @@
         } );
     });
 
-    console.log('home version 1.70');
+    console.log('home page version 1.87');
 })(jQuery);

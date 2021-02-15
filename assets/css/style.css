@@ -32,6 +32,10 @@ ul.wc_payment_methods.payment_methods, .form-row.place-order {
 }
 .woocommerce-checkout-payment table.shop_table.woocommerce-checkout-review-order-table {
     margin: 0px 0px 10px 0;
+    border: 0;
+}
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set#customer_details .col-2 {
+    display: none;
 }
 table th, table td {
     border: 0px solid #cccccc;

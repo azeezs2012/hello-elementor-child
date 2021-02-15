@@ -50,12 +50,12 @@ defined( 'ABSPATH' ) || exit;
                         ?>
                     </p>
                     <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-message">
-                        Thank you <?php echo $order->get_billing_last_name() ?> for buying RapidLoad to speed up our website!
+                        Thank you <?php echo $order->get_billing_first_name() ?> for buying RapidLoad to speed up your website!
                     </p>
 
                     <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-instructions">
                         Be sure to place <strong><a class="support-email" href="mailto:support@rapidload.io">support@rapidload.io</a></strong> on your approved senders
-                        list to prevent emails from going into spam <strong><a class="address-card-action" href="">Add us to you address book (vCard)</a></strong>
+                        list to prevent emails from going into spam
                     </p>
                 </div>
             </div>
@@ -70,12 +70,12 @@ defined( 'ABSPATH' ) || exit;
                 </div>
                 <div class="instructions-content">
                     <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-info-1">
-                        <span class="text"><strong>Check your email to get your login info we sent to:</strong></span> <span class="value">
+                        <span class="text"><strong>Your login information was sent to:</strong></span> <span class="value">
                             <a href="mailto:<?php echo $order->get_billing_email() ?>"><?php echo $order->get_billing_email() ?></a></span>
                     </p>
 
                     <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-info-2">
-                        If this is not the right email, create a ticket on our <a class="support-email" href="https://rapidload.zendesk.com/hc/en-us/requests/new">support channel.</a>
+                        If this is not the right email, please <a class="support-email" href="https://rapidload.zendesk.com/hc/en-us/requests/new">let us know here.</a>
                     </p>
                 </div>
             </div>
@@ -89,7 +89,7 @@ defined( 'ABSPATH' ) || exit;
                     </div>
                     <div class="info-text">
                         <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-info-1">
-                            <strong>Need help to install a WordPress plugin?</strong>
+                            <strong>Need help installing the plugin?</strong>
                         </p>
                         <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-info-2">Check our documentation
                             <a class="support-email" href="https://rapidload.zendesk.com/hc/en-us/articles/1500000363341-Installation-Requirements">Installing RapidLoad</a>
